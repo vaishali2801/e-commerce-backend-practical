@@ -2,7 +2,7 @@
 import Product from "../model/productModel.js";
 import HttpError from "../middleware/HttpError.js";
 
-const getProduct = async (req, res, next) => {
+const getMyProducts = async (req, res, next) => {
     try {
 
         const products = await Product.find({
@@ -145,4 +145,4 @@ const deleteProduct = async (req, res, next) => {
     }
 };
 
-export default { getMyProducts,getProduct ,createProduct,getSingleProduct,updateProduct,deleteProduct};
+export default { getMyProducts ,createProduct,getSingleProduct,updateProduct,deleteProduct};
