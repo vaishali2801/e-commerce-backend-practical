@@ -146,7 +146,6 @@ Add Image Upload
 Add Pagination & Search
 Add Frontend Integration
 
-screenshot:
 ```
 
 Author
