@@ -17,7 +17,7 @@ router.get("/getCategory",categoryController.getAllCategory);
 router.get("/getSingleCategory/:id",categoryController.getSingleCategory);
 
 //product
-router.get("/getProduct",productController.getProduct);
+router.get("/getProduct",auth,productController.getProduct);
 router.get("/getSingleProduct/:id",productController.getSingleProduct);
 
 export default router;

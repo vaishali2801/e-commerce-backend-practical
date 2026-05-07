@@ -4,11 +4,23 @@ import HttpError from "../middleware/HttpError.js";
 
 const getProduct = async (req, res, next) => {
     try {
-        const products = await Product.find({});
-        if (!products) {
+
+        const products = await Product.find({
+            owner:req.user._id
+        })
+        .populate("owner","name email")
+        .populate("category","name");
+
+        if (!products || products.length === 0) {
             return next(new HttpError("product not found", 404));
         }
-        res.status(200).json({ success: true, message: "all product get successfully..", products });
+
+        res.status(200).json({
+            success: true,
+            message: "user products fetched successfully",
+            products
+        });
+
     } catch (error) {
         next(new HttpError(error.message, 500));
     }
@@ -133,4 +145,4 @@ const deleteProduct = async (req, res, next) => {
     }
 };
 
-export default { getProduct ,createProduct,getSingleProduct,updateProduct,deleteProduct};
+export default { getMyProducts,getProduct ,createProduct,getSingleProduct,updateProduct,deleteProduct};
