@@ -107,18 +107,23 @@ User logs in
 JWT token is generated
 Token stored in cookies
 Middleware verifies token for protected routes
+
 Roles
 Admin
+
 Manage Products
 Manage Categories
 Access Protected Routes
+
 User
 View Products
 Access Own Products
+
 Middleware
 Authentication Middleware
 Role Authorization Middleware
 Error Handling Middleware
+
 Database Models
 User Model
 name
@@ -128,6 +133,7 @@ role
 phone
 city
 address
+
 Product Model
 title
 description
@@ -135,16 +141,10 @@ price
 image
 category
 owner
+
 Category Model
 name
 description
-Future Improvements
-Add Cart Functionality
-Add Order Management
-Add Payment Gateway
-Add Image Upload
-Add Pagination & Search
-Add Frontend Integration
 
 ```
 
